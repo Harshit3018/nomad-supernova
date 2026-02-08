@@ -26,7 +26,17 @@ export default function Hero({ movie }: HeroProps) {
         }
     }, [movie]);
 
-    if (!movie) return <div className="h-[70vh] bg-neutral-900 animate-pulse" />;
+    if (!movie) return (
+        <div className="h-[70vh] bg-neutral-900 flex items-center justify-center text-white" style={{ minHeight: '50vh', backgroundColor: '#333' }}>
+            <div className="text-center p-8 bg-black/50 rounded-lg backdrop-blur-sm border border-red-500">
+                <h2 className="text-2xl font-bold mb-2 text-red-500">Video Unavailable</h2>
+                <p className="text-gray-300 mb-4">Nomad could not load movie data.</p>
+                <p className="text-sm text-gray-500 font-mono bg-black p-2 rounded">
+                    Tip: Ensure NEXT_PUBLIC_TMDB_API_KEY is set in Vercel.
+                </p>
+            </div>
+        </div>
+    );
 
     return (
         <div className="relative h-[85vh] w-full text-white">

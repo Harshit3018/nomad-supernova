@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --color-netflixRed: #E50914;
+}
+
 @layer base {
   body {
     background-color: #141414;
